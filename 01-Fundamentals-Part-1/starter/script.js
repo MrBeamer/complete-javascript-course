@@ -77,7 +77,6 @@ if(markBMI > johnBMI) {
   console.log("Johns BMI is higher than Marks.")
 }
 
-*/
 
 ////////////////////////////////////
 // Type Conversion and Coercion
@@ -100,4 +99,101 @@ console.log('19' - '13' + 17);
 console.log('123' < 57);
 console.log( 5 + 6 + '4' + 9 - 4 - 2);
 
+////////////////////////////////////
+// LECTURE: Equality Operators: == vs. ===
+
+const numNeighbours = Number(
+prompt('How many neighbour countries does your country have?'),
+);
+
+const numNeighbours = 1;
+  if(numNeighbours === 1) {
+    console.log('Only 1 border!');
+  } else if(numNeighbours > 1) {
+    console.log('More than 1 border');
+  } else {
+   console.log('Noborders');
+  }
+
+
+////////////////////////////////////
+// LECTURE: Logical Operators
+
+const country = "usa";
+const language =  "english";
+const island  = false;
+const population = 40;
+
+if(language === "english" && island === false && population < 50) {
+  console.log(`Yous hould live in ${country} :)`);
+} else {
+  console.log(`${country} does not meet your criteria :(`);
+}
+
+////////////////////////////////////
+// Coding Challenge #3
+
+const dolphinsAverageScore = (96 + 108 + 89)/3;
+const koalasAverageScore = ( 88 + 91 +110)/3;
+
+console.log(dolphinsAverageScore);
+console.log(koalasAverageScore);
+
+if(dolphinsAverageScore === koalasAverageScore  || dolphinsAverageScore < 100 && koalasAverageScore < 100) {
+  console.log("Draw");
+}
+else if(dolphinsAverageScore > koalasAverageScore ) {
+  console.log("Dolphins win.");
+} else if(koalasAverageScore > dolphinsAverageScore ) {
+  console.log("Koalas win.");
+}
+
+////////////////////////////////////
+// LECTURE: The switch Statement
+
+const language = "mandarin";
+
+switch(language) {
+
+case 'chinese':
+case 'mandarin':
+console.log('MOST number of native speakers!');
+break;
+case 'spanish':
+console.log('2nd place in number of native speakers');
+break;
+case 'english':
+console.log('3rd place');
+break;
+case 'hindi':
+console.log('Number 4');
+break;
+case 'arabic':
+console.log('5th most spoken language');
+break;
+default:
+console.log('Great language too :D');
+}
+
+////////////////////////////////////
+// LECTURE: The Conditional (Ternary) Operator
+
+const countryToTest = "Portugal"
+const countryPopulation = 44;
+
+console.log(
+`${countryToTest}'s population is ${countryPopulation > 33 ? 'above' : 'below'} average`,
+);
+
+
+////////////////////////////////////
+// Coding Challenge #4
+
+const bill = 275;
+const tip = bill >= 50 && bill <= 300 ? bill*0.15 : bill*0.2;
+const finalBill = bill + tip;
+
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${finalBill}`)
+
+*/
 
