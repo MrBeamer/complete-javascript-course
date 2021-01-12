@@ -220,4 +220,75 @@ if(mark.BMI > john.BMI) {
   console.log(`${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName} (${mark.BMI})!`)
 }
 
+
+///////////////////////////////////////
+// LECTURE: Iteration: The for Loop
+
+
+for(let counter = 0; counter <= 50; counter++) {
+  console.log(`Voter number ${counter} is currently voting`)
+}
+
+///////////////////////////////////////
+// LECTURE: Looping Arrays, Breaking and Continuing
+
+
+function percentageOfWorld1 (country, population) {
+  const percentageOfWorldPopulation = (population/7900)*100;
+   console.log(`${country} has ${population} million people, so it's about ${percentageOfWorldPopulation}of the world population`);
+}
+
+// const germany = percentageOfWorld1("Germany", 83);
+// const italy = percentageOfWorld1("Italy", 10);
+// const sweden = percentageOfWorld1("Sweden", 60);
+
+// console.log(germany);
+// console.log(italy);
+// console.log(sweden);
+
+const countries = ["Germany", "Italy", "Sweden"]
+const populations = [83, 10, 60]
+const percentages2 = [];
+
+for(let i = 0; i < populations.length; i++ ) {
+  percentageOfWorld1(countries[i], populations[i]);
+}
+
+///////////////////////////////////////
+// LECTURE: Looping Arrays, Breaking and Continuing
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for( let i = 0; i < listOfNeighbours.length; ++i) {
+  for(let j = 0; j < listOfNeighbours[i].length; ++j) {
+    console.log(`Neighbours: ${listOfNeighbours[i][j]}`);
+  }
+}
+
+///////////////////////////////////////
+// Coding Challenge #4
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips =[];
+const totals = [];
+
+for( let i = 0; i < bills.length; i++) {
+tips.push(calcTip(bills[i]))
+totals.push(calcTip(bills[i])+bills[i])
+}
+
+console.log(tips);
+console.log(totals);
+
+function calcAverage (totals) {
+ const sumOfTotals= totals.reduce((a, b) => a + b, 0)/bills.length;
+ return sumOfTotals
+}
+console.log(calcAverage(totals));
+console.log(calcAverage(tips));
+
 */
