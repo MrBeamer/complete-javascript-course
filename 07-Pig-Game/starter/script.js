@@ -25,7 +25,7 @@ score1El.textContent = 0;
 
 let scores = [0, 0];
 let currentScore = 0;
-let activePlayer = 0; // switches between 0 and 1
+let activePlayer = 0; // switches between 0 & 1
 let playingGame = true;
 
 console.log(playingGame);
