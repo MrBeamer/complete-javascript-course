@@ -365,8 +365,27 @@ const game = {
 
 // bonus
 
-const scorers = {};
-for (const player of game.scored) {
-  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
-}
-console.log(scorers);
+// const scorers = {};
+// for (const player of game.scored) {
+//   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+// }
+// console.log(scorers);
+
+const uniqueRoles = new Set([
+  'Master',
+  'Cook',
+  'Cook',
+  'Master',
+  'Model',
+  'Model',
+  'Dancer',
+]);
+
+console.log(uniqueRoles);
+uniqueRoles.add('Fucker');
+uniqueRoles.add('Fucker');
+console.log(uniqueRoles.size);
+const [master, cook, ...rest] = [...uniqueRoles];
+console.log(master, cook);
+console.log(rest);
+// console.log([...uniqueRoles]);
