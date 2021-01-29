@@ -288,54 +288,54 @@ const restaurant = {
 ///////////////////////////////////////
 // CODING CHALLENGE #2:
 
-const game = {
-  team1: 'Bayern munich',
-  team2: 'Borrussia Dortmund',
-  player: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-  printWinner() {},
+// const game = {
+//   team1: 'Bayern munich',
+//   team2: 'Borrussia Dortmund',
+//   player: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+//   printWinner() {},
 
-  printGoals(...players) {
-    console.log(players);
-    console.log(
-      `Scorer: ${players} ${players.length} goals have fallen that game.`
-    );
-  },
-};
+//   printGoals(...players) {
+//     console.log(players);
+//     console.log(
+//       `Scorer: ${players} ${players.length} goals have fallen that game.`
+//     );
+//   },
+// };
 
 // // 1
 // for (const [goal, player] of game.scored.entries()) {
@@ -371,21 +371,259 @@ const game = {
 // }
 // console.log(scorers);
 
-const uniqueRoles = new Set([
-  'Master',
-  'Cook',
-  'Cook',
-  'Master',
-  'Model',
-  'Model',
-  'Dancer',
+// const uniqueRoles = new Set([
+//   'Master',
+//   'Cook',
+//   'Cook',
+//   'Master',
+//   'Model',
+//   'Model',
+//   'Dancer',
+// ]);
+
+// console.log(uniqueRoles.has('master'));
+// for (const role of uniqueRoles) {
+//   console.log(role);
+// }
+// console.log(uniqueRoles);
+// uniqueRoles.add('Fucker');
+// uniqueRoles.add('Fucker');
+// console.log(uniqueRoles.size);
+// const [master, cook, ...rest] = [...uniqueRoles];
+// console.log(master, cook);
+// console.log(rest);
+// // console.log([...uniqueRoles]);
+
+// const mapTesting = new Map();
+// mapTesting
+//   .set(true, 'I am a king.')
+//   .set(false, 'I am not a king.')
+//   .set('Pokemon', 'Pickachu');
+
+// console.log(mapTesting);
+// console.log(mapTesting.get(true));
+
+// Maps: Iteration
+// const question = new Map([
+//   ['question', 'What is the best programming language in the world?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct 🎉'],
+//   [false, 'Try again!'],
+// ]);
+// console.log(question);
+
+// // Quiz app
+// // console.log(question.get('question'));
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+// // const answer = Number(prompt('Your answer'));
+// const answer = Number(prompt(question.get('question')));
+
+// // for (const [key, value] of question) {
+// //   if (typeof value === 'number') {
+// //     if (value === answer) {
+// //       console.log(question.get(true));
+// //     } else {
+// //       console.log(question.get(false));
+// //     }
+// //   }
+// // }
+// console.log(question.get(question.get('correct') === answer));
+
+// const arr = ['Test1', 'Test2', 'Test2', 'Test2', 'Test2', 'Test3'];
+// const testSet = new Set(arr);
+
+// console.log([...testSet]);
+
+///////////////////////////////////////
+// CODING CHALLENGE #3
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
 ]);
 
-console.log(uniqueRoles);
-uniqueRoles.add('Fucker');
-uniqueRoles.add('Fucker');
-console.log(uniqueRoles.size);
-const [master, cook, ...rest] = [...uniqueRoles];
-console.log(master, cook);
-console.log(rest);
-// console.log([...uniqueRoles]);
+// 1.
+
+// const test = gameEvents.values();
+// const set = new Set(test);
+// console.log([...set]);
+
+// console.log([...gameEvents]);
+
+// const arr = [];
+// for (const [time, event] of gameEvents) {
+//   console.log(event);
+//   arr.push(event);
+//   // console.log([event]);
+//   // console.log(time, test);
+// }
+
+// const filter = new Set(arr);
+// console.log(filter);
+
+// const events = [...new Set(gameEvents.values())];
+// console.log(events);
+
+// 2;
+// gameEvents.delete(64);
+
+// // 3.
+// console.log(
+//   `An event happen, on average, ever ${90 / gameEvents.size} minutes.`
+// );
+
+// for (const [time, event] of gameEvents) {
+//   //1 option
+//   // time <= 45
+//   //   ? console.log(`[FIRST HALF] ${time}: ${event}`)
+//   //   : console.log(`[SECOND HALF] ${time}: ${event}`);
+
+//   // 2 option
+//   let section = time <= 45 ? 'FIRST' : 'SECOND';
+//   console.log(`[${section} HALF] ${time}: ${event}`);
+
+//3 option
+// if (time <= 45) {
+//   console.log(`[FIRST HALF] ${time}: ${event}`);
+// } else {
+//   console.log(`[SECOND HALF] ${time}: ${event}`);
+// }
+// }
+// console.log('1234B'.slice(-1));
+
+// function checkMiddleSeat(seat) {
+//   const yesNo = seat.slice(-1) == 'B' || seat.slice(-1) == 'E' ? 'is' : "isn't";
+//   console.log(`Seat: ${seat} ${yesNo} a middle seat.`);
+//   // seat.slice(-1) == "B" || seat == "C" ? console.log(`Seat: ${} is a middle seat`) : console.log(`Seat: ${} isn't a middle seat`)
+// }
+// //B an E are middle seats
+// checkMiddleSeat('11B');
+// checkMiddleSeat('11C');
+// checkMiddleSeat('3E');
+
+// function correctSpelling(word) {
+//   const rest = word.substring(1).toLowerCase();
+//   const firstLetter = word[0].toUpperCase();
+//   console.log(firstLetter + rest);
+// }
+
+// correctSpelling('joNaS');
+// correctSpelling('DIETER');
+// correctSpelling('tom');
+// correctSpelling('FRIEda');
+
+// const email = 'hello@jonas.io';
+// let logEmail = '  Hello@Jonas.io \n';
+// logEmail = logEmail.trim().toLowerCase();
+
+// email === logEmail ? console.log('correct') : console.log('incorrect');
+
+// const priceGB = '223,89$';
+// const priceEU = priceGB.replace(',', '.').replace('$', ' Euro');
+// console.log(priceGB);
+// console.log(priceEU);
+
+// const announcement =
+//   'All passenger get to door 23, all passenger please go to door 23.';
+
+// console.log(announcement.replaceAll('door', 'gate'));
+
+// function checkLuggage(items) {
+//   const luggage = items.toLowerCase();
+//   if (luggage.includes('gun') || luggage.includes('knife')) {
+//     console.log('You cant enter the plane.');
+//   } else {
+//     console.log('Happy, flight!');
+//   }
+// }
+// checkLuggage('I have a laptop, some food and a pocket knife');
+// checkLuggage('I have a pair socks, some snack and a pocket gun');
+// checkLuggage('I have a pizza and some drinks ');
+
+// const [firstName, lastName] = 'Michael Beamer'.split(' ');
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+// function capitalizeName(name) {
+//   const newArr = [];
+//   const arrNames = name.split(' ');
+//   for (const n of arrNames) {
+//     newArr.push(n[0].toUpperCase() + n.substring(1).toLowerCase());
+//   }
+//   console.log(newArr.join(' '));
+// }
+
+// capitalizeName('michael maurice beamer');
+// capitalizeName('Lisa maivi nguyen');
+// capitalizeName('john park johnson');
+// capitalizeName('kimberly booty ungelenk');
+
+// function maskCreditCard(number) {
+//   const str = String(number);
+//   const last = str.slice(-4);
+//   return last.padStart(str.length, '*');
+// }
+
+// console.log(maskCreditCard(11112222));
+// maskCreditCard('1123534453803');
+
+///////////////////////////////////////
+// CODING CHALLENGE #4
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const btn = document.querySelector('button');
+
+// function camelCase() {
+//   const textInput = document.querySelector('textarea').value;
+//   const lowerCaseText = textInput.toLocaleLowerCase().trim();
+//   const splitText = [lowerCaseText.split('\n')];
+//   const splitText = [lowerCaseText.split('_')];
+//   console.log(splitText);
+
+//   const newArr = [];
+
+//   for (const [word1, word2] of splitText) {
+//     newArr.push(
+//       word1 + word2[0].toUpperCase() + word2.substring(1).toLowerCase()
+//     );
+//   }
+//   const camelCaseWord = newArr.join('');
+//   console.log(camelCaseWord);
+// }
+
+// btn.addEventListener('click', camelCase);
+
+function camelCase() {
+  const textInput = document.querySelector('textarea').value;
+  const row = textInput.split('\n');
+  let iconCount = 0;
+
+  row.forEach(word => {
+    iconCount += 1;
+    const wordArr = word.trim().toLocaleLowerCase().split('_');
+    const [word1, word2] = wordArr;
+    const cameCaseWord =
+      word1 + word2[0].toUpperCase() + word2.substring(1).toLowerCase();
+
+    console.log(cameCaseWord.padEnd(20, ' ') + ' ✅'.repeat(iconCount));
+  });
+}
+
+btn.addEventListener('click', camelCase);
