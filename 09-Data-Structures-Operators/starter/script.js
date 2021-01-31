@@ -610,20 +610,19 @@ const btn = document.querySelector('button');
 
 // btn.addEventListener('click', camelCase);
 
-function camelCase() {
-  const textInput = document.querySelector('textarea').value;
-  const row = textInput.split('\n');
-  let iconCount = 0;
+// function camelCase() {
+//   const textInput = document.querySelector('textarea').value;
+//   const row = textInput.split('\n');
+//   let iconCount = 0;
 
-  row.forEach(word => {
-    iconCount += 1;
-    const wordArr = word.trim().toLocaleLowerCase().split('_');
-    const [word1, word2] = wordArr;
-    const cameCaseWord =
-      word1 + word2[0].toUpperCase() + word2.substring(1).toLowerCase();
+//   row.forEach(word => {
+//     iconCount += 1;
+//     const wordArr = word.trim().toLocaleLowerCase().split('_');
+//     const [word1, word2] = wordArr;
+//     const cameCaseWord = word1 + word2[0].toUpperCase() + word2.substring(1);
 
-    console.log(cameCaseWord.padEnd(20, ' ') + ' ✅'.repeat(iconCount));
-  });
-}
+//     console.log(cameCaseWord.padEnd(20, ' ') + ' ✅'.repeat(iconCount));
+//   });
+// }
 
-btn.addEventListener('click', camelCase);
+// btn.addEventListener('click', camelCase);
