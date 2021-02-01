@@ -61,6 +61,41 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+function displayMovement(movements) {
+  containerMovements.innerHTML = '';
+
+  movements.forEach((movement, index) => {
+    const type = movement > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `<div class="movements__row">
+                    <div class="movements__type movements__type--${type}">${
+      index + 1
+    } ${type}</div>
+                    <div class="movements__date">3 days ago</div>
+                    <div class="movements__value">${movement}€</div>
+                   </div>`;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+}
+
+displayMovement(account1.movements);
+
+// Computing usernames
+function createUsernames(accounts) {
+  const user = accounts.forEach(acc => {
+    acc.username = acc.owner
+      .toLocaleLowerCase()
+      .split(' ')
+      .map(namePart => {
+        namePart[0];
+      })
+      .join('');
+  });
+}
+createUsernames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -73,4 +108,44 @@ const currencies = new Map([
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+//filter movements
+
+const deposit = movements.filter(mov => mov > 0);
+const withdrawal = movements.filter(mov => mov < 0);
+
+console.log(deposit);
+console.log(withdrawal);
+
+// current balance
+const balance = movements.reduce((sum, value) => {
+  return sum + value;
+}, 0);
+
+console.log(balance);
+
 /////////////////////////////////////////////////
+// Coding Challenge #1
+
+// const dogsJulia = [3, 5, 2, 12, 7];
+// const dogsKate = [4, 1, 15, 8, 3];
+
+// function checkDogs(dogsJulia, dogsKate) {
+//   const correctJulia = [...dogsJulia].slice(1, -2);
+
+//   const dogArr = [...correctJulia, ...dogsKate];
+//   dogArr.forEach((dog, index) => {
+//     const lifeStage = dog >= 3 ? 'adult' : 'puppy';
+
+//     console.log(
+//       `Dog number ${index + 1} is an ${lifeStage}, and is ${dog} years old`
+//     );
+//   });
+// }
+
+// checkDogs(dogsJulia, dogsKate);
+
+// const eurToUsd = 1.1;
+
+// const moveUsd = movements.map(movement => movement * eurToUsd);
+
+// console.log(moveUsd);
