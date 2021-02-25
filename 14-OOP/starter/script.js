@@ -262,4 +262,102 @@
 // michael.introduce();
 // michael.calcAge();
 
-class Account {}
+// class Account {
+//   // Public field (on instances)
+//   locale = navigator.language;
+
+//   // Private fields
+//   #movements = [];
+//   #pin;
+
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.#pin = pin;
+//     // this.#movements = [];
+//     // this.locale = navigator.language;
+//     console.log(`Thanks ${this.owner} for opening an account.`);
+//   }
+
+//   // public interface
+//   getMovements() {
+//     return this.movements;
+//   }
+//   deposit(amount) {
+//     this.#movements.push(amount);
+//   }
+//   withdrawal(amount) {
+//     this.#movements.push(-amount);
+//   }
+
+//   balance() {
+//     const balance = this.#movements.reduce((value, sum) => value + sum, 0);
+//     console.log(balance);
+//   }
+// }
+
+// const acc1 = new Account('Michael', 'EUR', 1234);
+// const acc2 = new Account('Kim', 'USD', 4321);
+// acc1.deposit(1000);
+// acc1.withdrawal(500);
+// acc2.deposit(2000);
+// acc2.withdrawal(1000);
+// acc1.balance();
+// acc2.balance();
+
+// console.log(acc1.locale);
+
+// Code challenge 4
+
+// Parent class
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    console.log(`${this.make} going at ${(this.speed += 10)} km/h`);
+    return this;
+  }
+
+  brake() {
+    console.log(`${this.make} going at ${(this.speed -= 5)} km/h`);
+    return this;
+  }
+  get speedUs() {
+    return this.speed / 1.6;
+  }
+
+  set speedUs(speed) {
+    this._speed = speed * 1.6;
+  }
+}
+
+// Child class inheritance from Car
+class EvCl extends CarCl {
+  //Private fields
+  #charge;
+
+  constructor(make, speed, charge) {
+    super(make, speed);
+    this.#charge = charge;
+  }
+
+  chargeBattery(chargeTo) {
+    this.#charge = chargeTo;
+  }
+
+  accelerate() {
+    console.log(
+      `${
+        this.make
+      } going at ${(this.speed += 20)}km/h, with a charge of ${(this.#charge -= 1)}%`
+    );
+    return this;
+  }
+}
+
+const rivian = new EvCl('Rivian', 120, 23);
+// rivian.chargeBattery(100);
+rivian.accelerate().accelerate().accelerate().brake();
